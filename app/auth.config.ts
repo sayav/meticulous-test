@@ -15,8 +15,8 @@ export const authConfig = {
     // while this file is also used in non-Node.js environments
   ],
   callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      let isLoggedIn = !!auth?.user || window.Meticulous?.isRunningAsTest;
+    authorized({ auth, request: { nextUrl, headers } }) {
+      let isLoggedIn = !!auth?.user || headers.get("meticulous-is-test");
       let isOnDashboard = nextUrl.pathname.startsWith("/protected");
 
       if (isOnDashboard) {
