@@ -12,7 +12,7 @@ export default function Counter() {
   };
 
   return (
-    <button style={{ width: 40, background: "green" }} onClick={handleClick}>
+    <button style={{ width: 40, background: "red" }} onClick={handleClick}>
       {count}
     </button>
   );
