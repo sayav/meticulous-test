@@ -1,5 +1,5 @@
 "use server";
 
 export async function increment(n: number) {
-  return n + 1;
+  return n - 1;
 }
