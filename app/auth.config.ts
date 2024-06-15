@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import { NextAuthConfig } from 'next-auth';
+=======
+import { NextAuthConfig } from "next-auth";
+>>>>>>> Stashed changes
 
 export const authConfig = {
   pages: {
@@ -21,6 +25,16 @@ export const authConfig = {
       }
 
       return true;
+    },
+  },
+  cookies: {
+    sessionToken: {
+      name: `authjs.session-token`,
+      options: {
+        httpOnly: false,
+        sameSite: "lax",
+        path: "/",
+      },
     },
   },
 } satisfies NextAuthConfig;
